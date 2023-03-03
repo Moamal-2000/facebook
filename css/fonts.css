@@ -1,0 +1,17 @@
+@font-face {
+  font-family: helvetica neue;
+  font-style: normal;
+  src: local('Helvetica Neue'), url(../fonts/helveticaneue/HelveticaNeue.ttf)
+}
+
+@font-face {
+  font-family: helvetica neue mid;
+  font-style: normal;
+  src: local('Helvetica Neue mid'), url(../fonts/helveticaneue/HelveticaNeue_Medium.ttf)
+}
+
+@font-face {
+  font-family: helvetica neue med;
+  font-style: normal;
+  src: local('Helvetica Neue med'), url(../fonts/helveticaneue/HelveticaNeueMed.ttf)
+}

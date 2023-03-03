@@ -1,0 +1,334 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+:root {
+  --black: #050505;
+  --light-gray: #65676b;
+  --blue: #1877f2;
+  --white: #ffffff;
+  --direction: rtl;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+i {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  direction: var(--direction);
+  color: var(--black);
+}
+
+span {
+  display: block;
+}
+
+::-moz-placeholder {
+  color: #969696;
+}
+
+::placeholder {
+  color: #969696;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+header {
+  background-color: var(--white);
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+header .options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+header .options .user-profile {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+
+header .options .user-profile img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+header .options i {
+  background-color: #e4e6eb;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  position: relative;
+}
+
+header .options i.bi-grid-3x3-gap-fill {
+  font-size: 21px;
+}
+
+header .options i::after,
+header .options .user-profile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.0431372549);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+
+header .options i:hover::after,
+header .options .user-profile:hover::after {
+  opacity: 1;
+}
+
+header .options i.active {
+  background-color: #dbe7f2;
+  color: #1770e5;
+}
+
+header .pages ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+header .pages ul li a i {
+  position: relative;
+  color: #65676b;
+  font-size: 22px;
+  padding: 12px 42px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -ms-transition: all 0.1s;
+  -o-transition: all 0.1s;
+}
+
+header .pages ul li a i:hover {
+  background-color: #f2f2f2;
+}
+
+header .pages ul li.active::before {
+  position: absolute;
+}
+
+header .search {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+header .search .input {
+  background-color: #f0f2f5;
+  border-radius: 100px;
+  width: 250px;
+  -webkit-border-radius: 900px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  padding: 9px 8px;
+  padding-right: 40px;
+  position: relative;
+  cursor: text;
+  overflow: hidden;
+  transition: padding-right 0.2s;
+  -webkit-transition: padding-right 0.2s;
+  -moz-transition: padding-right 0.2s;
+  -ms-transition: padding-right 0.2s;
+  -o-transition: padding-right 0.2s;
+}
+
+header .search.active .input {
+  padding-right: 20px;
+}
+
+header .search .input input {
+  background-color: transparent;
+  color: #050505;
+  font-size: 18px;
+  font-weight: normal;
+  word-spacing: 1px;
+}
+
+header .search .input input::-moz-placeholder {
+  color: #65676b;
+}
+
+header .search .input input::placeholder {
+  color: #65676b;
+}
+
+header .search .input i {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  color: #65676b;
+  font-size: 15px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+header .search.active .input i {
+  transform: translate(40px, -50%);
+  -webkit-transform: translate(40px, -50%);
+  -moz-transform: translate(40px, -50%);
+  -ms-transform: translate(40px, -50%);
+  -o-transform: translate(40px, -50%);
+  font-size: 0;
+}
+
+header .search .facebook-logo {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+header .search .facebook-logo img {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .search.active .facebook-logo img {
+  display: none;
+}
+
+header .search .facebook-logo i {
+  font-size: 20px;
+  color: #65676b;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  padding-right: 4px;
+}
+
+header .search .facebook-logo i:hover {
+  background-color: #f2f2f2;
+}
+
+header .search.active .facebook-logo i {
+  display: flex;
+  padding-left: 6px;
+}/*# sourceMappingURL=main.css.map */
